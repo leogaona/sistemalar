@@ -36,4 +36,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //UNO A MUCHOS
+    public function entradas(){
+        return $this->hasMany('App\Models\Entrada', 'user_id', 'id');
+    }
+    public function comentarios(){
+        return $this->hasMany('App\Models\Comentario');
+    }
+    //EJEMPLO UNO A UNO (EN COMENTARIO TAMBIEN BELONGS)
+    //public function comentario(){
+    //    return $this->hasOne('App\Models\Comentario');
+    //}
+
+    //EJEMPLO MUCHOS A MUCHOS
+    /*
+    public function userHasRoles(){
+        return $this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id');
+    }
+    */
 }

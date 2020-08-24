@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,6 +24,65 @@ Route::get('/usuario',function(){
     return "Hola Usuario {$nombre}";
 });
 */
+
+
+//Route::get('/consulta', function(){
+    //$usuarios = DB::table('users')->get();
+    //$usuarios = DB::table('users')->first();
+    //$usuarios = DB::table('users')->get();
+    //dd($usuarios[0]);
+
+
+    //$usuarios = DB::table('users')
+    //->select('name', 'email')
+    //->get();
+
+    // $usuarios = DB::table('entradas')
+    // ->select('titulo', 'contenido')
+    // ->where('user_id', '=', 1)
+    // ->get(); 
+    // dd($usuarios);
+
+
+    //$usuarios = DB::table('entradas')
+    //->join('users', 'entradas.user_id', '=', 'users.id')
+    //->select(['users.*', 'entradas.titulo'])
+    //->get(); 
+    //dd($usuarios);
+
+   
+//});
+
+Route::get('/consulta', function(){
+    $insertado = DB::table('users')
+    // ->insertGetId(
+    //     [
+    //       "name" => "pepito perez",
+    //       "email" => "pepito@email.com",
+    //       "password" => "pepitopass"
+    //     ]   
+    // );
+
+
+    // ->insert([
+    //     "name" => "juan perez",
+    //     "email" => "juan@perez.com",
+    //     "password" => "juanperez" 
+    // ]);
+    // ->where('id', '=', '11')
+    // ->update([
+    //    "name" => "juan perez acosta",
+    //    "email" => "juan@perez.com",
+    //    "password" => "juanperez" 
+    // ]);
+
+    ->where('id', '=', '12')
+    ->delete();
+
+    dd($insertado);
+
+});
+
 
 Route::match(['put','post'],'/cliente',function(){
     return 'cliente';

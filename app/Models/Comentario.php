@@ -12,4 +12,11 @@ class Comentario extends Model
     //referencia a la tabla y primaryKey
     protected $table = 'comentarios';
     protected $primaryKey = 'id';
+    
+    public function entrada(){
+        return $this->belongsTo('App\Models\Entrada');
+    }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

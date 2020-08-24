@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Autos
+                   SISTEMALAR
                 </div>
 
                 <div class="links">

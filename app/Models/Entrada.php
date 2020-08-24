@@ -14,4 +14,11 @@ class Entrada extends Model
     protected $fillable = [
         'titulo', 'contenido','user_id'
     ];
+    //UNO A MUCHOS INVERSA
+    public function user(){
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
+    public function comentarios(){
+        return $this->hasMany('App\Models\Comentario');
+    }
 }
