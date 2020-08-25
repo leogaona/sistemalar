@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Route::get('/entrada', 'EntradaController@index');
+Route::resource('/entrada', 'EntradaController');
+
+
 /*
 Route::get('/usuario',function(){
     $nombre = "Leonardo";
