@@ -12,10 +12,17 @@ class EntradaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        /*
         $entradas = Entrada::all();
         return view('entrada.index',compact('entradas'));
+        */
+        //dd($request);
+        //echo $request->path();
+        //echo $request->url();
+        
+        return response("Respuesta", 404);
     }
 
     /**
